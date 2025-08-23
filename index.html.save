@@ -53,11 +53,11 @@
         <a href="https://raw.githubusercontent.com/calchiwo/WodiC/main/v1/WodiC.apk" class="download-btn" download>Download v1 APK</a>
 
         <h3>Upcoming Launch for WodiC v2</h3>
-        <p>Stay tuned! WodiC v3 is coming soon with exciting features!</p>
+        <p>Stay tuned! WodiC v2 is coming soon with exciting features!</p>
     </div>
 
     <footer>
-        <p>&copy; ©2025-2025 BuiltByWodi® Procjects. Developed By Caleb Chikanka Wodi (CALCHIWO)</p>
+	        <p>&copy; 2025 Calchiwo</p>
     </footer>
 </body>
 </html>
