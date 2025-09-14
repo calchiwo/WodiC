@@ -1,0 +1,35 @@
+:root{
+  --bg: #2f1f1d; /* dark brown */
+  --panel: #3b2724;
+  --accent: #c98f85;
+  --muted: #8e7a76;
+  --button: #352424;
+  --op: #6f4d47;
+  --equals: #8b3b32;
+  --ac: #7b7a2f;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{background:var(--bg);display:flex;align-items:center;justify-content:center;padding:14px}
+.calculator{width:100%;max-width:420px;background:linear-gradient(180deg,var(--panel), #2f1f1d);border-radius:18px;padding:16px;color:var(--accent);box-shadow:0 8px 30px rgba(0,0,0,.6)}
+.screen{min-height:140px;padding:8px 12px;border-radius:12px;background:transparent;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end}
+.expression{font-size:28px;opacity:.8;color:var(--muted);min-height:34px}
+.result{font-size:64px;font-weight:600;line-height:1;color:var(--accent)}
+
+.scientific{margin-top:6px}
+.row{display:flex;gap:12px;margin:8px 0}
+.btn{flex:1;padding:18px;border-radius:999px;border:none;background:rgba(255,255,255,.02);color:var(--accent);font-size:20px;min-width:56px}
+.btn.small{padding:10px 12px;font-size:16px}
+.btn:active{transform:translateY(1px)}
+.btn.ac{background:var(--ac);color:#fff}
+.btn.op{background:var(--op);color:#efd7cf}
+.btn.equals{background:var(--equals);color:#fff}
+.btn.num{background:rgba(0,0,0,.2);}
+#back{background:rgba(255,255,255,.03)}
+.install-banner{position:fixed;left:12px;right:12px;bottom:28px;background:#412927;padding:10px;border-radius:12px;display:flex;gap:8px;align-items:center;justify-content:flex-end}
+.hidden{display:none}
+#installBtn{background:var(--accent);border:none;padding:8px 12px;border-radius:8px;color:#2b1b1a}
+
+/* responsive tweaks */
+@media (min-width:480px){.calculator{max-width:560px}.result{font-size:82px}}
