@@ -8,8 +8,7 @@ import { Suspense } from "react"
 
 export const metadata: Metadata = {
   title: "WodiC Voice Calculator",
-  description: "AI-powered voice calculator with scientific functions",
-  generator: "v0.app",
+  description: "AI-powered voice calculator with scientific tools",
   manifest: "/manifest.json",
   themeColor: "#3b82f6",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
