@@ -26,7 +26,7 @@ export default function Home() {
           <p className="text-muted-foreground text-sm">
             This is a project of{" "}
             <a
-              href="https://builtbywodi.netlify.app"
+              href="https://builtbywodi.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 font-semibold transition-colors"
