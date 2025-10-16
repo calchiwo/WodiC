@@ -43,12 +43,13 @@ function processExpression(input: string): { value: string; explanation: string 
   if (input.includes("minus") || input.includes("subtract") || input.includes("-")) {
     return handleSubtraction(input)
   }
-  if (input.includes("times") || input.includes("multiply") || input.includes("×") || input.includes("*")) {
+  if (input.includes("times") || input.includes("multiply") || input.includes("×") || input.includes("*") || input.includes("x")) {
     return handleMultiplication(input)
   }
   if (input.includes("divide") || input.includes("÷") || input.includes("/")) {
     return handleDivision(input)
   }
+}
 
   // Handle scientific functions
   if (input.includes("square root") || input.includes("sqrt") || input.includes("√")) {
