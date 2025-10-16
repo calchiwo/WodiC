@@ -138,31 +138,34 @@ function handleSubtraction(input: string): { value: string; explanation: string 
 }}
 
 function handleMultiplication(input: string): { value: string; explanation: string } {
-  // Step 1: Normalize input: replace × with *
-  const normalizedInput = input.replace(/×/g, "*");
+  // Step 1: Normalize input (replace × with * and remove extra spaces)
+  const normalizedInput = input.replace(/×/g, "*").replace(/\s+/g, "");
 
-  // Step 2: Extract numbers and force numeric type
-  const numbers = extractNumbers(normalizedInput)
-    .map(num => parseFloat(num))
+  // Step 2: Split by multiplication operators (*)
+  const parts = normalizedInput.split("*");
+
+  // Step 3: Parse numbers safely
+  const numbers = parts
+    .map(part => parseFloat(part))
     .filter(num => !isNaN(num));
 
-  // Step 3: Multiply safely
-  if (numbers.length >= 2) {
-    const result = numbers.reduce((product, num, index) => (index === 0 ? num : product * num));
-
-    // Step 4: Format explanation for history / display
-    const explanation = `${numbers.join(" * ")} = ${result}`;
-
-    return { value: result.toString(), explanation };
+  // Step 4: Handle empty input
+  if (numbers.length === 0) {
+    return { value: "0", explanation: "Please provide numbers to multiply" };
   }
 
-  // Single number case
+  // Step 5: Handle single number
   if (numbers.length === 1) {
     return { value: numbers[0].toString(), explanation: `Number: ${numbers[0]}` };
   }
 
-  // No numbers case
-  return { value: "0", explanation: "Please provide numbers to multiply" };
+  // Step 6: Multiply all numbers
+  const result = numbers.reduce((product, num) => product * num, 1);
+
+  // Step 7: Format explanation
+  const explanation = `${numbers.join(" * ")} = ${result}`;
+
+  return { value: result.toString(), explanation };
 }
 
 function handleDivision(input: string): { value: string; explanation: string } {
