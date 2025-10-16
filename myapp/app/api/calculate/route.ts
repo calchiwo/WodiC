@@ -43,7 +43,7 @@ function processExpression(input: string): { value: string; explanation: string 
   if (input.includes("minus") || input.includes("subtract") || input.includes("-")) {
     return handleSubtraction(input)
   }
-  if (input.includes("times") || input.includes("multiply") || input.includes("×") || input.includes("*") || input.includes("x")) {
+  if (input.includes("times") || input.includes("multiply") || input.includes("×") || input.includes("*") || input.includes("*")) {
     return handleMultiplication(input)
   }
   if (input.includes("divide") || input.includes("÷") || input.includes("/")) {
@@ -151,7 +151,7 @@ function handleMultiplication(input: string): { value: string; explanation: stri
     const result = numbers.reduce((product, num, index) => (index === 0 ? num : product * num));
 
     // Step 4: Format explanation for history / display
-    const explanation = `${numbers.join(" × ")} = ${result}`;
+    const explanation = `${numbers.join(" * ")} = ${result}`;
 
     return { value: result.toString(), explanation };
   }
