@@ -134,10 +134,12 @@ function handleSubtraction(input: string): { value: string; explanation: string 
     return { value: numbers[0].toString(), explanation: `Number: ${numbers[0]}` }
   }
   return { value: "0", explanation: "Please provide numbers to subtract" }
-}
+}}
 
 function handleMultiplication(input: string): { value: string; explanation: string } {
-  const numbers = extractNumbers(input).map(num => parseFloat(num)); // parse to numbers
+  const numbers = extractNumbers(input)
+    .map(num => parseFloat(num))
+    .filter(num => !isNaN(num)); // <-- filter out invalid numbers
 
   if (numbers.length >= 2) {
     const result = numbers.reduce((product, num) => product * num, 1);
