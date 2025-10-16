@@ -137,15 +137,17 @@ function handleSubtraction(input: string): { value: string; explanation: string 
 }}
 
 function handleMultiplication(input: string): { value: string; explanation: string } {
-  // Replace × with * so JS can multiply
+  // Step 1: normalize × to * so JS can multiply
   const normalizedInput = input.replace(/×/g, "*");
 
+  // Step 2: extract numbers and force numeric type
   const numbers = extractNumbers(normalizedInput)
     .map(num => parseFloat(num))
     .filter(num => !isNaN(num));
 
+  // Step 3: multiply numbers safely
   if (numbers.length >= 2) {
-    const result = numbers.reduce((product, num) => product * num);
+    const result = numbers.reduce((product, num, index) => (index === 0 ? num : product * num));
     return { value: result.toString(), explanation: `${numbers.join(" × ")} = ${result}` };
   }
 
