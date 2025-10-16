@@ -137,15 +137,18 @@ function handleSubtraction(input: string): { value: string; explanation: string 
 }
 
 function handleMultiplication(input: string): { value: string; explanation: string } {
-  const numbers = extractNumbers(input).map(num => parseFloat(num)); // <-- parse to numbers
+  const numbers = extractNumbers(input).map(num => parseFloat(num)); // parse to numbers
+
   if (numbers.length >= 2) {
-    const result = numbers.reduce((product, num) => product * num, 1)
-    return { value: result.toString(), explanation: `${numbers.join(" × ")} = ${result}` }
+    const result = numbers.reduce((product, num) => product * num, 1);
+    return { value: result.toString(), explanation: `${numbers.join(" × ")} = ${result}` };
   }
+
   if (numbers.length === 1) {
-    return { value: numbers[0].toString(), explanation: `Number: ${numbers[0]}` }
+    return { value: numbers[0].toString(), explanation: `Number: ${numbers[0]}` };
   }
-  return { value: "0", explanation: "Please provide numbers to multiply" }
+
+  return { value: "0", explanation: "Please provide numbers to multiply" };
 }
 
 function handleDivision(input: string): { value: string; explanation: string } {
