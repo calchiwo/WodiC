@@ -137,12 +137,14 @@ function handleSubtraction(input: string): { value: string; explanation: string 
 }}
 
 function handleMultiplication(input: string): { value: string; explanation: string } {
+  // Extract numbers and make sure they are actual numbers
   const numbers = extractNumbers(input)
     .map(num => parseFloat(num))
-    .filter(num => !isNaN(num)); // <-- filter out invalid numbers
+    .filter(num => !isNaN(num));
 
   if (numbers.length >= 2) {
-    const result = numbers.reduce((product, num) => product * num, 1);
+    // Use the same pattern as subtraction/division
+    const result = numbers.reduce((product, num, index) => (index === 0 ? num : product * num));
     return { value: result.toString(), explanation: `${numbers.join(" × ")} = ${result}` };
   }
 
