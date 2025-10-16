@@ -260,7 +260,7 @@ export default function VoiceCalculator() {
         const numbers = extractNumbersFromText(expression)
         if (numbers.length >= 2) {
           const result = numbers.reduce((product, num) => product * num, 1)
-          return { value: result.toString(), explanation: `${numbers.join(" × ")} = ${result}` }
+          return { value: result.toString(), explanation: `${numbers.join(" * ")} = ${result}` }
         }
       }
 
@@ -370,7 +370,7 @@ export default function VoiceCalculator() {
   ]
 
   const basicButtons = [
-    ["C", "⌫", "/", "×"],
+    ["C", "⌫", "/", "*"],
     ["7", "8", "9", "-"],
     ["4", "5", "6", "+"],
     ["1", "2", "3", "="],
@@ -575,7 +575,7 @@ export default function VoiceCalculator() {
           </CardContent>
         </Card>
 
-        {/* Voice Commands Help */}
+        {/* Voice Commands Examples */}
         <Card>
           <CardHeader>
             <CardTitle>Voice Commands Examples</CardTitle>
