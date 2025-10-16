@@ -318,22 +318,26 @@ function handleUnitConversion(input: string): { value: string; explanation: stri
 
 function evaluateDirectExpression(input: string): number | null {
   try {
-    // Clean the input to only allow safe mathematical operations
-    const cleaned = input.replace(/[^0-9+\-*/.() ]/g, "").replace(/\s+/g, "")
+    if (!input || input.trim().length === 0) return null;
 
-    if (!cleaned || cleaned.length === 0) {
-      return null
-    }
+    // Step 1: Normalize user input
+    const normalized = input
+      .replace(/×/g, "*")   // Replace multiplication symbol
+      .replace(/÷/g, "/")   // Replace division symbol
+      .replace(/[^0-9+\-*/.() ]/g, "") // Remove any unsafe characters
+      .replace(/\s+/g, ""); // Remove extra spaces
 
-    // Basic validation - must contain at least one number
-    if (!/\d/.test(cleaned)) {
-      return null
-    }
+    // Step 2: Basic validation - must contain at least one number
+    if (!/\d/.test(normalized)) return null;
 
-    // Use Function constructor for safe evaluation (limited scope)
-    const result = Function(`"use strict"; return (${cleaned})`)()
-    return typeof result === "number" && !isNaN(result) && isFinite(result) ? result : null
+    // Step 3: Evaluate safely using Function constructor
+    const result = Function(`"use strict"; return (${normalized})`)();
+
+    // Step 4: Return result if valid number
+    return typeof result === "number" && !isNaN(result) && isFinite(result)
+      ? result
+      : null;
   } catch {
-    return null
+    return null;
   }
 }
