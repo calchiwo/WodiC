@@ -137,24 +137,30 @@ function handleSubtraction(input: string): { value: string; explanation: string 
 }}
 
 function handleMultiplication(input: string): { value: string; explanation: string } {
-  // Step 1: normalize × to * so JS can multiply
+  // Step 1: Normalize input: replace × with *
   const normalizedInput = input.replace(/×/g, "*");
 
-  // Step 2: extract numbers and force numeric type
+  // Step 2: Extract numbers and force numeric type
   const numbers = extractNumbers(normalizedInput)
     .map(num => parseFloat(num))
     .filter(num => !isNaN(num));
 
-  // Step 3: multiply numbers safely
+  // Step 3: Multiply safely
   if (numbers.length >= 2) {
     const result = numbers.reduce((product, num, index) => (index === 0 ? num : product * num));
-    return { value: result.toString(), explanation: `${numbers.join(" × ")} = ${result}` };
+
+    // Step 4: Format explanation for history / display
+    const explanation = `${numbers.join(" × ")} = ${result}`;
+
+    return { value: result.toString(), explanation };
   }
 
+  // Single number case
   if (numbers.length === 1) {
     return { value: numbers[0].toString(), explanation: `Number: ${numbers[0]}` };
   }
 
+  // No numbers case
   return { value: "0", explanation: "Please provide numbers to multiply" };
 }
 
