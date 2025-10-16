@@ -77,6 +77,9 @@ export default function VoiceCalculator() {
       setIsProcessing(true)
       setProcessingError(null)
 
+      // <-- ADD THIS LINE
+      expression = expression.replace(/\btimes\b|\bmultiply\b/gi, "×");
+
       try {
         console.log("[v0] Processing manual calculation:", expression)
 
