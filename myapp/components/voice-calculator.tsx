@@ -575,7 +575,7 @@ export default function VoiceCalculator() {
         {/* Voice Commands Help */}
         <Card>
           <CardHeader>
-            <CardTitle>Voice Commands</CardTitle>
+            <CardTitle>Voice Commands Examples</CardTitle>
           </CardHeader>
           <CardContent className="p-4">
             <div className="space-y-2 text-sm text-muted-foreground">
