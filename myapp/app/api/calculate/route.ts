@@ -137,7 +137,7 @@ function handleSubtraction(input: string): { value: string; explanation: string 
 }
 
 function handleMultiplication(input: string): { value: string; explanation: string } {
-  const numbers = extractNumbers(input)
+  const numbers = extractNumbers(input).map(num => parseFloat(num)); // <-- parse to numbers
   if (numbers.length >= 2) {
     const result = numbers.reduce((product, num) => product * num, 1)
     return { value: result.toString(), explanation: `${numbers.join(" × ")} = ${result}` }
