@@ -1,4 +1,4 @@
-const CACHE_NAME = "wodic-voice-calculator-v4"
+const CACHE_NAME = "wodic-voice-calculator-v4.1"
 const urlsToCache = [
   "/",
   "/manifest.json",
