@@ -1,3 +1,5 @@
+"use client"
+
 import VoiceCalculator from "@/components/voice-calculator"
 import PWAInstallButton from "@/components/pwa-install-button"
 import Image from "next/image"
