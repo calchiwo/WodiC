@@ -4,13 +4,16 @@ import VoiceCalculator from "@/components/voice-calculator"
 import PWAInstallButton from "@/components/pwa-install-button"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ClientOnly } from "@/components/client-only"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background p-4 flex flex-col">
       <div className="container mx-auto max-w-4xl flex-1">
         <div className="flex justify-end mb-4 gap-2">
-          <ThemeToggle />
+          <ClientOnly>
+            <ThemeToggle />
+          </ClientOnly>
           <PWAInstallButton />
         </div>
 
