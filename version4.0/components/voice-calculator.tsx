@@ -77,6 +77,9 @@ export default function VoiceCalculator() {
       setIsProcessing(true)
       setProcessingError(null)
 
+      // <-- ADD THIS LINE
+      expression = expression.replace(/\btimes\b|\bmultiply\b/gi, "×");
+
       try {
         console.log("[v0] Processing manual calculation:", expression)
 
@@ -236,8 +239,6 @@ export default function VoiceCalculator() {
         expression = normalizedInput.replace(/^(what is|calculate)\s+/, "")
       }
 
-      expression = expression.replace(/×/g, "*")
-
       // Basic arithmetic with word parsing
       if (expression.includes("plus") || expression.includes("add")) {
         const numbers = extractNumbersFromText(expression)
@@ -259,7 +260,7 @@ export default function VoiceCalculator() {
         const numbers = extractNumbersFromText(expression)
         if (numbers.length >= 2) {
           const result = numbers.reduce((product, num) => product * num, 1)
-          return { value: result.toString(), explanation: `${numbers.join(" × ")} = ${result}` }
+          return { value: result.toString(), explanation: `${numbers.join(" * ")} = ${result}` }
         }
       }
 
@@ -369,7 +370,7 @@ export default function VoiceCalculator() {
   ]
 
   const basicButtons = [
-    ["C", "⌫", "/", "×"],
+    ["C", "⌫", "/", "*"],
     ["7", "8", "9", "-"],
     ["4", "5", "6", "+"],
     ["1", "2", "3", "="],

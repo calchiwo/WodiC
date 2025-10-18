@@ -1,16 +1,17 @@
 import type React from "react"
-import type { Metadata, Viewport } from "next"
+import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Suspense } from "react"
-import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: "WodiC Voice Calculator",
-  description: "AI-powered voice calculator with scientific functions",
+  description: "AI-powered voice calculator with scientific tools built by Caleb Wodi",
   manifest: "/manifest.json",
+  themeColor: "#3b82f6",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -29,14 +30,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const viewport: Viewport = {
-  themeColor: "#3b82f6",
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -45,9 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <ThemeProvider>
-          <Suspense fallback={null}>{children}</Suspense>
-        </ThemeProvider>
+        <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
         <script
           dangerouslySetInnerHTML={{
