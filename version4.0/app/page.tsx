@@ -1,24 +1,16 @@
-"use client"
-
 import VoiceCalculator from "@/components/voice-calculator"
 import PWAInstallButton from "@/components/pwa-install-button"
 import Image from "next/image"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { ClientOnly } from "@/components/client-only"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background p-4 flex flex-col">
       <div className="container mx-auto max-w-4xl flex-1">
-        <div className="flex justify-end mb-4 gap-2">
-          <ClientOnly>
-            <ThemeToggle />
-          </ClientOnly>
-          <PWAInstallButton />
-        </div>
-
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="flex items-center justify-center gap-2 mb-4 relative">
+            <div className="absolute right-0 top-0">
+              <PWAInstallButton />
+            </div>
             <Image src="/wodic-logo.jpg" alt="WodiC Logo" width={60} height={60} className="rounded-lg" />
             <h1 className="text-4xl font-bold text-foreground text-balance">WodiC Voice Calculator</h1>
           </div>
@@ -34,7 +26,7 @@ export default function Home() {
           <p className="text-muted-foreground text-sm">
             This is a project of{" "}
             <a
-              href="https://builtbywodi.netlify.app"
+              href="https://builtbywodi.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 font-semibold transition-colors"

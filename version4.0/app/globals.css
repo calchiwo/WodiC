@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens from red to blue theme */
+  /*updated colors from red to blue theme */
   --background: #ffffff;
   --foreground: #374151;
   --card: #ffffff;

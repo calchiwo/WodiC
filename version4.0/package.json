@@ -1,6 +1,6 @@
 {
-  "name": "WodiC Voice Calculator",
-  "version": "4.1.0",
+  "name": "wodic-voice-calculator",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -49,9 +49,9 @@
     "lucide-react": "^0.454.0",
     "next": "14.2.16",
     "next-themes": "^0.4.6",
-    "react": "^18",
+    "react": "^18.3.1",
     "react-day-picker": "9.8.0",
-    "react-dom": "^18",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.60.0",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.4",
@@ -60,7 +60,7 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.9",
-    "zod": "3.25.67"
+    "zod": "3.25.76"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.9",

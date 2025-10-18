@@ -1,0 +1,27 @@
+{
+  "name": "WodiC Voice Calculator",
+  "short_name": "WodiC",
+  "description": "AI-powered voice calculator with scientific tools built by Caleb Wodi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/wodic-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wodic-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities", "AI", "education"],
+  "lang": "en",
+  "dir": "ltr"
+}

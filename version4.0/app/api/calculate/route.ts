@@ -43,12 +43,13 @@ function processExpression(input: string): { value: string; explanation: string 
   if (input.includes("minus") || input.includes("subtract") || input.includes("-")) {
     return handleSubtraction(input)
   }
-  if (input.includes("times") || input.includes("multiply") || input.includes("×") || input.includes("*")) {
+  if (input.includes("times") || input.includes("multiply") || input.includes("×") || input.includes("*") || input.includes("*")) {
     return handleMultiplication(input)
   }
   if (input.includes("divide") || input.includes("÷") || input.includes("/")) {
     return handleDivision(input)
   }
+}
 
   // Handle scientific functions
   if (input.includes("square root") || input.includes("sqrt") || input.includes("√")) {
@@ -134,18 +135,37 @@ function handleSubtraction(input: string): { value: string; explanation: string 
     return { value: numbers[0].toString(), explanation: `Number: ${numbers[0]}` }
   }
   return { value: "0", explanation: "Please provide numbers to subtract" }
-}
+}}
 
 function handleMultiplication(input: string): { value: string; explanation: string } {
-  const numbers = extractNumbers(input)
-  if (numbers.length >= 2) {
-    const result = numbers.reduce((product, num) => product * num, 1)
-    return { value: result.toString(), explanation: `${numbers.join(" × ")} = ${result}` }
+  // Step 1: Normalize input (replace × with * and remove extra spaces)
+  const normalizedInput = input.replace(/×/g, "*").replace(/\s+/g, "");
+
+  // Step 2: Split by multiplication operators (*)
+  const parts = normalizedInput.split("*");
+
+  // Step 3: Parse numbers safely
+  const numbers = parts
+    .map(part => parseFloat(part))
+    .filter(num => !isNaN(num));
+
+  // Step 4: Handle empty input
+  if (numbers.length === 0) {
+    return { value: "0", explanation: "Please provide numbers to multiply" };
   }
+
+  // Step 5: Handle single number
   if (numbers.length === 1) {
-    return { value: numbers[0].toString(), explanation: `Number: ${numbers[0]}` }
+    return { value: numbers[0].toString(), explanation: `Number: ${numbers[0]}` };
   }
-  return { value: "0", explanation: "Please provide numbers to multiply" }
+
+  // Step 6: Multiply all numbers
+  const result = numbers.reduce((product, num) => product * num, 1);
+
+  // Step 7: Format explanation
+  const explanation = `${numbers.join(" * ")} = ${result}`;
+
+  return { value: result.toString(), explanation };
 }
 
 function handleDivision(input: string): { value: string; explanation: string } {
@@ -298,24 +318,26 @@ function handleUnitConversion(input: string): { value: string; explanation: stri
 
 function evaluateDirectExpression(input: string): number | null {
   try {
-    let cleaned = input.replace(/×/g, "*")
+    if (!input || input.trim().length === 0) return null;
 
-    // Clean the input to only allow safe mathematical operations
-    cleaned = cleaned.replace(/[^0-9+\-*/.() ]/g, "").replace(/\s+/g, "")
+    // Step 1: Normalize user input
+    const normalized = input
+      .replace(/×/g, "*")   // Replace multiplication symbol
+      .replace(/÷/g, "/")   // Replace division symbol
+      .replace(/[^0-9+\-*/.() ]/g, "") // Remove any unsafe characters
+      .replace(/\s+/g, ""); // Remove extra spaces
 
-    if (!cleaned || cleaned.length === 0) {
-      return null
-    }
+    // Step 2: Basic validation - must contain at least one number
+    if (!/\d/.test(normalized)) return null;
 
-    // Basic validation - must contain at least one number
-    if (!/\d/.test(cleaned)) {
-      return null
-    }
+    // Step 3: Evaluate safely using Function constructor
+    const result = Function(`"use strict"; return (${normalized})`)();
 
-    // Use Function constructor for safe evaluation (limited scope)
-    const result = Function(`"use strict"; return (${cleaned})`)()
-    return typeof result === "number" && !isNaN(result) && isFinite(result) ? result : null
+    // Step 4: Return result if valid number
+    return typeof result === "number" && !isNaN(result) && isFinite(result)
+      ? result
+      : null;
   } catch {
-    return null
+    return null;
   }
 }
