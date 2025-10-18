@@ -6,11 +6,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background p-4 flex flex-col">
       <div className="container mx-auto max-w-4xl flex-1">
+        <div className="flex justify-end mb-4">
+          <PWAInstallButton />
+        </div>
+
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-2 mb-4 relative">
-            <div className="absolute right-0 top-0">
-              <PWAInstallButton />
-            </div>
+          <div className="flex items-center justify-center gap-2 mb-4">
             <Image src="/wodic-logo.jpg" alt="WodiC Logo" width={60} height={60} className="rounded-lg" />
             <h1 className="text-4xl font-bold text-foreground text-balance">WodiC Voice Calculator</h1>
           </div>
