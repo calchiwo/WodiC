@@ -16,7 +16,7 @@ Built by [Caleb Wodi](https://x.com/calchiwo), WodiC is a modern, voice-powered 
 ## 🚀 Overview
 
 WodiC is a **voice-first scientific calculator** built for speed, simplicity, and accessibility.  
-You don’t type — you *talk*. WodiC uses modern browser speech recognition to understand your command, process it instantly, and speak the result back.
+You don’t type, you *talk*. WodiC uses modern browser speech recognition to understand your command, process it instantly, and speak the result back.
 
 ---
 
@@ -28,7 +28,7 @@ You don’t type — you *talk*. WodiC uses modern browser speech recognition to
 - 🌗 **Dark Mode:** Beautiful, modern design that adapts to your style.  
 - 💬 **Natural Responses:** WodiC *talks back* — giving a human-like experience.  
 - 🪶 **Lightweight:** Built for performance, runs smoothly on mobile and desktop.  
-- ☁️ **Web-Based:** No installs — just open and calculate.
+- ☁️ **Web-Based:** You can install it
 
 ---
 
@@ -97,4 +97,6 @@ You may not copy, redistribute, or resell this project without permission.
 Thanks to everyone supporting voice-first experiences.  
 WodiC is built to make everyday computing faster, more human, and more fun.
 
-> **“You talk. It listens. It solves.” — WodiC**
+> **“You talk. It listens. It solves.”
+
+— WodiC**
