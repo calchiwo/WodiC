@@ -1,4 +1,3 @@
-# WodiC
 # 🧮 WodiC — The Voice Calculator
 
 **WodiC** is an **AI-powered voice calculator app** with **scientific tools** built entirely on my phone.
