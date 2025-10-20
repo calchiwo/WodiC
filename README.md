@@ -1,12 +1,11 @@
-# 🧮 WodiC — The Voice Calculator
+# 🧮 WodiC: The Voice Calculator
 
-**WodiC** is an **AI-powered voice calculator app** with **scientific tools** built entirely on my phone.
+**WodiC** is an **AI-powered voice calculator app** with **scientific tools**, built entirely on my phone.
 
-**Talk to your calculator — WodiC listens, solves, and replies instantly.**  
-Built by [Caleb Wodi](https://x.com/calchiwo), WodiC is a modern, voice-powered calculator that understands you naturally.
+**Talk to your calculator. WodiC listens, solves, and replies instantly.**  
+Built by [Caleb Wodi](https://x.com/calchiwo). WodiC is a modern, voice-powered calculator that understands you naturally.
 
-Just speak your math problem — WodiC listens, computes, and responds in real time, even **without internet access**.
-
+Just speak your math problem. WodiC listens, computes, and responds in real time, even **without internet access**.
 
 🌐 **Try it now:** [wodic.vercel.app](https://wodic.vercel.app)
 
@@ -15,19 +14,21 @@ Just speak your math problem — WodiC listens, computes, and responds in real t
 ## 🚀 Overview
 
 WodiC is a **voice-first scientific calculator** built for speed, simplicity, and accessibility.  
-You don’t type, you *talk*. WodiC uses modern browser speech recognition to understand your command, process it instantly, and speak the result back.
+You don’t type, you *talk*. WodiC uses browser speech recognition to understand your command, process it instantly, and speak the result back.
+
+You can also install WodiC as a **Progressive Web App (PWA)** directly from your browser by pressing the **Download** or **Install App** button for an app-like experience on mobile or desktop.
 
 ---
 
 ## ✨ Features
 
-- 🎙️ **Voice Input:** Speak your calculation naturally — no buttons required.  
+- 🎙️ **Voice Input:** Speak your calculation naturally, no buttons required.  
 - ⚡ **Instant Results:** Get your answer immediately after speaking.  
 - 🧠 **Scientific Mode:** Solve complex equations, not just basic arithmetic.  
-- 🌗 **Dark Mode:** Beautiful, modern design that adapts to your style.  
-- 💬 **Natural Responses:** WodiC *talks back* — giving a human-like experience.  
-- 🪶 **Lightweight:** Built for performance, runs smoothly on mobile and desktop.  
-- ☁️ **Web-Based:** You can install it
+- 🌗 **Dark Mode:** Clean, modern design that adapts to your theme.  
+- 💬 **Natural Responses:** WodiC talks back, giving a human-like experience.  
+- 🪶 **Lightweight:** Runs smoothly on both mobile and desktop.  
+- ☁️ **Web + PWA:** Access it anywhere, and install it for offline use.  
 
 ---
 
@@ -36,8 +37,8 @@ You don’t type, you *talk*. WodiC uses modern browser speech recognition to un
 - **Frontend:** Next.js + React + TypeScript  
 - **Voice Recognition:** Web Speech API  
 - **Deployment:** Vercel  
-- **UI:** Tailwind CSS (or similar modern styling)  
-- **Platform:** Fully responsive web app (works across browsers & devices)
+- **UI:** Tailwind CSS  
+- **Platform:** Fully responsive web app (works across browsers and devices)
 
 ---
 
@@ -45,9 +46,10 @@ You don’t type, you *talk*. WodiC uses modern browser speech recognition to un
 
 1. Visit [wodic.vercel.app](https://wodic.vercel.app)  
 2. Allow microphone access when prompted  
-3. Speak naturally, e.g.  
+3. Speak naturally, for example:  
    > “What is twenty-five times six?”  
 4. WodiC will process your voice, display the equation, and speak the result back instantly.  
+5. To install it as a PWA, tap the **Download** or **Install App** button in your browser.  
 
 ---
 
@@ -66,9 +68,9 @@ You don’t type, you *talk*. WodiC uses modern browser speech recognition to un
 
 - ✅ Voice input + instant results  
 - ✅ Scientific mode  
-- 🔜 Offline mode  
+- ✅ PWA installation  
+- 🔜 Full offline mode  
 - 🔜 History log of previous calculations  
-- 🔜 Mobile PWA version  
 - 🔜 AI explanation mode (“Explain how you solved it”)  
 
 ---
@@ -84,18 +86,16 @@ Mobile-first developer, building modern voice-driven tools.
 
 ## 🪪 License
 
-© 2025 Caleb Wodi. All rights reserved.  
-You may not copy, redistribute, or resell this project without permission.  
+This project is **open source** under the [MIT License](LICENSE).  
+You’re free to use, modify, and share WodiC with proper attribution.
 
-*(If you decide to open-source it later, we can add MIT or GPL licensing text.)*
+© 2025 Caleb Wodi. Built with passion and curiosity.
 
 ---
 
 ## 🌟 Acknowledgments
 
 Thanks to everyone supporting voice-first experiences.  
-WodiC is built to make everyday computing faster, more human, and more fun.
+WodiC is built to make everyday computing faster, more natural, and more fun.
 
-> **“You talk. It listens. It solves.”
-
-— WodiC**
+> **“You talk. It listens. It solves.” – WodiC**
