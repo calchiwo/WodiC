@@ -3,7 +3,7 @@
 **WodiC** is an **AI-powered voice calculator app** with **scientific tools**, built entirely on my phone.
 
 **Talk to your calculator. WodiC listens, solves, and replies instantly.**  
-Built by [Caleb Wodi](https://x.com/calchiwo). WodiC is a modern, voice-powered calculator that understands you naturally.
+WodiC is a modern, voice-powered calculator that understands you naturally.
 
 Just speak your math problem. WodiC listens, computes, and responds in real time, even **without internet access**.
 
@@ -77,12 +77,7 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 
 ## 👨🏾‍💻 Author
 
-**Caleb Wodi**  
-Mobile-first developer, building modern voice-driven tools.  
-- X / Twitter: [@calchiwo](https://x.com/calchiwo)  
-- Project Page: [wodic.vercel.app](https://wodic.vercel.app)
-
----
+**Caleb Wodi**
 
 ## 🪪 License
 
