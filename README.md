@@ -48,7 +48,7 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 2. Allow microphone access when prompted  
 3. Speak naturally, for example:  
    > “What is twenty-five times six?”  
-4. WodiC will process your voice, display the equation, and speak the result back instantly.  
+4. WodiC will process your question, display the equation, and speak the result back instantly.  
 5. To install it as a PWA, tap the **Download** or **Install App** button in your browser.  
 
 ---
