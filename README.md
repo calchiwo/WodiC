@@ -57,7 +57,7 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 
 | You Say | WodiC Replies |
 |----------|---------------|
-| “What is 50 plus 40?” | “Ninety.” |
+| “What is 50 plus 40?” | “The answer is Ninety.” |
 | “Square root of 81.” | “Nine.” |
 | “Cosine of thirty degrees.” | “0.866.” |
 | “Ten factorial.” | “3,628,800.” |
