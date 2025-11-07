@@ -69,8 +69,8 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 - ✅ Voice input + instant results  
 - ✅ Scientific mode  
 - ✅ PWA installation  
-- 🔜 Full offline mode  
-- 🔜 History log of previous calculations  
+- ✅ Full offline mode  
+- ✅ History log of previous calculations  
 - 🔜 AI explanation mode (“Explain how you solved it”)  
 
 ---
