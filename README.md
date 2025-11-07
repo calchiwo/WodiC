@@ -7,11 +7,11 @@ WodiC is a modern, voice-powered calculator that understands you naturally.
 
 Just speak your math problem. WodiC listens, computes, and responds in real time, even **without internet access**.
 
-🌐 **Try it now:** [wodic.vercel.app](https://wodic.vercel.app)
+**Try it now:** [wodic.vercel.app](https://wodic.vercel.app)
 
 ---
 
-## 🚀 Overview
+## Overview
 
 WodiC is a **voice-first scientific calculator** built for speed, simplicity, and accessibility.  
 You don’t type, you *talk*. WodiC uses browser speech recognition to understand your command, process it instantly, and speak the result back.
@@ -42,7 +42,7 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 
 ---
 
-## 🔧 Usage
+## Usage
 
 1. Visit [wodic.vercel.app](https://wodic.vercel.app)  
 2. Allow microphone access when prompted  
