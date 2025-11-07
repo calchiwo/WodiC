@@ -84,6 +84,4 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 This project is **open source** under the [MIT License](LICENSE).  
 You’re free to use, modify, and share WodiC with proper attribution.
 
-> **“You talk. It listens. It solves.”
-
-WodiC**
+> **“You talk. It listens. It solves**
