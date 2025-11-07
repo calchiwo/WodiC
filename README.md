@@ -1,4 +1,4 @@
-# 🧮 WodiC: The Voice Calculator
+# WodiC: The Voice Calculator
 
 **WodiC** is an **AI-powered voice calculator app** with **scientific tools**, built entirely on my phone.
 
@@ -79,7 +79,7 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 
 **Caleb Wodi**
 
-## 🪪 License
+## License
 
 This project is **open source** under the [MIT License](LICENSE).  
 You’re free to use, modify, and share WodiC with proper attribution.
