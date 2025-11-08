@@ -44,7 +44,7 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 
 ## Usage
 
-1. Visit [wodic.vercel.app](https://wodic.vercel.app)  
+1. You can  Visit [wodic.vercel.app](https://wodic.vercel.app)  
 2. Allow microphone access when prompted  
 3. Speak naturally, for example:  
    > “What is twenty-five times six?”  
