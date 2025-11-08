@@ -16,7 +16,7 @@ Just speak your math problem. WodiC listens, computes, and responds in real time
 WodiC is a **voice-first scientific calculator** built for speed, simplicity, and accessibility.  
 You don’t type, you *talk*. WodiC uses browser speech recognition to understand your command, process it instantly, and speak the result back.
 
-You can also install WodiC as a **Progressive Web App (PWA)** directly from your browser by pressing the **Download** or **Install App** button for an app-like experience on mobile or desktop.
+You can also install WodiC as a **Progressive Web App (PWA)** directly from your browser by pressing the **Download Now** button located at the top right, for an app-like experience on mobile or desktop.
 
 ---
 
@@ -30,7 +30,7 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 - 🪶 **Lightweight:** Runs smoothly on both mobile and desktop.  
 - ☁️ **Web + PWA:** Access it anywhere, and install it for offline use.  
 
----
+---7
 
 ## 🧩 Tech Stack
 
@@ -38,13 +38,14 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 - **Voice Recognition:** Web Speech API  
 - **Deployment:** Vercel  
 - **UI:** Tailwind CSS  
+- **Coded on:** My Phone only (don't have a laptop yet)
 - **Platform:** Fully responsive web app (works across browsers and devices)
 
 ---
 
 ## Usage
 
-1. You can  Visit [wodic.vercel.app](https://wodic.vercel.app)  
+1. Visit [wodic.vercel.app](https://wodic.vercel.app)  
 2. Allow microphone access when prompted  
 3. Speak naturally, for example:  
    > “What is twenty-five times six?”  
@@ -72,10 +73,14 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 - ✅ Full offline mode  
 - ✅ History log of previous calculations  
 - 🔜 AI explanation mode (“Explain how you solved it”)  
+-    Improve WodiC UI/UX
+-    Add support for multiple input types
+-    Enhance error handling and validation
+-    Expand documentation and examples
 
 ---
 
-## 👨🏾‍💻 Author
+## 👨🏾‍ Author
 
 **Caleb Wodi**
 
