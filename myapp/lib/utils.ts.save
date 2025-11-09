@@ -1,0 +1,27 @@
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+export async function getExchangeRate(from: string, to: string) {
+  try {
+    const res = await fetch(`https://api.exchangerate.host/latest?base=${from}&symbols=${to}`);
+    if (!res.ok) {
+      throw new Error('Failed to fetch exchange rates');
+    }
+
+    const data = await res.json();
+      const rate = data.rates[to];
+
+    if (!rate) {
+      throw new Error(`Could not find rate for ${to}`);
+    }
+
+    return rate;
+  } catch (error) {
+    console.error('Error fetching exchange rate:', error);
+    return null;
+  }
+}
