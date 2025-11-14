@@ -9,8 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: "WodiC Voice Calculator",
-  description: "AI-powered voice calculator with scientific functions",
-  generator: "v0.app",
+  description: "AI-powered voice calculator with scientific tools",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
