@@ -82,7 +82,7 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 
 ## 👨🏾‍ Author
 
-**Caleb Wodi [Calchiwo](https://x.com/calchiwo)**
+**Caleb Wodi ([Calchiwo](https://x.com/calchiwo))**
 
 ## License
 
