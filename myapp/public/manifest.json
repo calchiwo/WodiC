@@ -1,6 +1,6 @@
 {
   "name": "WodiC Voice Calculator",
-  "short_name": "WodiC Calc",
+  "short_name": "WodiC",
   "description": "AI-powered voice calculator with scientific functions",
   "start_url": "/",
   "display": "standalone",
