@@ -85,7 +85,7 @@ export default function PWAInstallButton() {
       className="bg-blue-600 hover:bg-blue-700 text-white shadow-md rounded-lg px-4 py-2 flex items-center gap-2 transition-all duration-200 hover:shadow-lg"
     >
       <Download size={16} />
-      Download Now
+      Download App Now
     </Button>
   )
 }
