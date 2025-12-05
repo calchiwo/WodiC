@@ -82,35 +82,51 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 
 ## How to Run
 
-To use this project on your computer or phone, follow these steps.
+Follow these steps to run this Next.js project on your computer or phone.
 
-1. Clone the repository
-
-Download the project by cloning it with Git.
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/calchiwo/WodiC.git
-
 ```
-2. Open the project folder
 
-Move into the cloned directory.
+2. **Open the project folder**
 
 ```bash
-cd WodiC
-
+cd WodiC/myapp
 ```
-3. Run the project
 
-Start the Python GUI.
+3. **Install dependencies**
 
 ```bash
-python chatbot.py
+pnpm install
+```
+
+If you use npm
+
+```bash
+npm install
+```
+
+4. **Run the development server**
+
+```bash
+pnpm dev
+```
+
+Or with npm
+
+```bash
+npm run dev
+```
+
+5. **Open the app**
+
+Visit this URL in your browser.
 
 ```
-The chatbot window will open,
-You can type messages and see the bot respond using simple rule based logic.
-
+http://localhost:3000
+```
 
 ## 👨🏾‍ Author
 
