@@ -80,6 +80,38 @@ You can also install WodiC as a **Progressive Web App (PWA)** directly from your
 
 ---
 
+## How to Run
+
+To use this project on your computer or phone, follow these steps.
+
+1. Clone the repository
+
+Download the project by cloning it with Git.
+
+```bash
+git clone https://github.com/calchiwo/WodiC.git
+
+```
+2. Open the project folder
+
+Move into the cloned directory.
+
+```bash
+cd WodiC
+
+```
+3. Run the project
+
+Start the Python GUI.
+
+```bash
+python chatbot.py
+
+```
+The chatbot window will open,
+You can type messages and see the bot respond using simple rule based logic.
+
+
 ## 👨🏾‍ Author
 
 **Caleb Wodi ([Calchiwo](https://x.com/calchiwo))**
