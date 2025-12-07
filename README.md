@@ -135,6 +135,6 @@ http://localhost:3000
 ## License
 
 This project is **open source** under the [MIT License](LICENSE).  
-You’re free to use, modify, and share WodiC with proper attribution.
+Feel free to use, modify, and share WodiC with proper attribution.
 
 > **“You talk. It listens. It solves"**
