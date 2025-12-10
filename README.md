@@ -1,34 +1,83 @@
-# WodiC: The Voice Calculator
+# WodiC, The Voice Calculator
 
-**WodiC** is an **AI-powered voice calculator app** with **scientific tools**, built entirely on my phone.
+WodiC is a fast voice based scientific calculator. You speak your math, it solves it instantly, even offline.
 
-**Talk to your calculator. WodiC listens, solves, and replies instantly.**  
-WodiC is a modern, voice-powered calculator that understands you naturally.
-
-Just speak your math problem. WodiC listens, computes, and responds in real time, even **without internet access**.
-
-**Try it now:** [wodic.vercel.app](https://wodic.vercel.app)
+Try it here: **https://wodic.vercel.app**
 
 ---
 
 ## Overview
 
-WodiC is a **voice-first scientific calculator** built for speed, simplicity, and accessibility.  
-You don’t type, you *talk*. WodiC uses browser speech recognition to understand your command, process it instantly, and speak the result back.
-
-You can also install WodiC as a **Progressive Web App (PWA)** directly from your browser by pressing the **Download Now** button located at the top right, for an app-like experience on mobile or desktop.
+WodiC lets you talk to your calculator. You speak a problem, the app listens, computes the result, and replies in real time. It works on mobile and desktop. You can install You can also install WodiC as a **Progressive Web App (PWA)** directly from your browser by pressing the **Download Now** button located at the top right, for an app like experience on mobile or desktop.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎙️ **Voice Input:** Speak your calculation naturally, no buttons required.  
-- ⚡ **Instant Results:** Get your answer immediately after speaking.  
-- 🧠 **Scientific Mode:** Solve complex equations, not just basic arithmetic.  
-- 🌗 **Dark Mode:** Clean, modern design that adapts to your theme.  
-- 💬 **Natural Responses:** WodiC talks back, giving a human-like experience.  
-- 🪶 **Lightweight:** Runs smoothly on both mobile and desktop.  
-- ☁️ **Web + PWA:** Access it anywhere, and install it for offline use.  
+- Voice input  
+- Instant results  
+- Scientific mode  
+- Dark mode  
+- Natural voice replies  
+- Lightweight performance  
+- Works offline  
+- Installable as a PWA  
+
+---
+
+## Tech Stack
+
+- Next.js, React, TypeScript  
+- Web Speech API  
+- Tailwind CSS  
+- Vercel deployment  
+
+---
+
+## Usage
+
+1. Visit https://wodic.vercel.app  
+2. Allow microphone access  
+3. Speak a command  
+4. WodiC displays the equation and speaks the result  
+5. Tap the install option in your browser to add the PWA
+
+---
+
+## Example Commands
+
+| You Say | WodiC Replies |
+|--------|----------------|
+| What is fifty plus forty | The answer is ninety |
+| Square root of eighty one | The answer is nine |
+| Cosine of thirty degrees | The answer is zero point eight six six |
+| Ten factorial | The answer is three million six hundred twenty eight thousand eight hundred |
+
+---
+
+## Roadmap
+
+- Voice input with instant results, complete  
+- Scientific mode, complete  
+- Full offline support, complete  
+- PWA installation, complete  
+- History log, complete  
+- AI explanation mode  
+- Improved UI and UX  
+- Better error handling  
+- More input formats  
+- Expanded documentation  
+
+---
+
+## How to Run
+
+1. Clone the repository  
+```bash
+git clone https://github.com/calchiwo/WodiC.git
+
+
+You can also install WodiC as a p.**Progressive Web App (PWA)** directly from your browser by pressing the **Download Now** button located at the top right, for an app-like experience on mobile or desktop.
 
 ---7
 
