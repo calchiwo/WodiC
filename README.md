@@ -72,12 +72,6 @@ WodiC lets you talk to your calculator. You speak a problem, the app listens, co
 
 ## How to Run
 
-1. Clone the repository  
-```bash
-git clone https://github.com/calchiwo/WodiC.git
-
-## How to Run
-
 Follow these steps to run this Next.js project on your computer or phone.
 
 1. **Clone the repository**
@@ -124,7 +118,7 @@ Visit this URL in your browser.
 http://localhost:3000
 ```
 
-## 👨🏾‍ Author
+## Author
 
 **Caleb Wodi ([Calchiwo](https://x.com/calchiwo))**
 
