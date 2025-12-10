@@ -77,7 +77,7 @@ WodiC lets you talk to your calculator. You speak a problem, the app listens, co
 git clone https://github.com/calchiwo/WodiC.git
 
 
-You can also install WodiC as a p.**Progressive Web App (PWA)** directly from your browser by pressing the **Download Now** button located at the top right, for an app-like experience on mobile or desktop.
+You can also install WodiC as a p.**Progressive Web App (PWA)** directly from your browser by pressing the **Download Now** button locate
 
 ---7
 
@@ -92,40 +92,7 @@ You can also install WodiC as a p.**Progressive Web App (PWA)** directly from yo
 
 ---
 
-## Usage
 
-1. Visit [wodic.vercel.app](https://wodic.vercel.app)  
-2. Allow microphone access when prompted  
-3. Speak naturally, for example:  
-   > “What is twenty-five times six?”  
-4. WodiC will process your question, display the equation, and speak the result back instantly.  
-5. To install it as a PWA, tap the **Download** or **Install App** button in your browser.  
-
----
-
-## Example Commands
-
-| You Say | WodiC Replies |
-|----------|---------------|
-| “What is 50 plus 40?” | “The answer is Ninety.” |
-| “Square root of 81.” | “The answer is Nine.” |
-| “Cosine of thirty degrees.” | “The answer is 0.866.” |
-| “Ten factorial.” | “The answer is 3,628,800.” |
-
----
-
-## 🧭 Roadmap
-
-- ✅ Voice input + instant results  
-- ✅ Scientific mode  
-- ✅ PWA installation  
-- ✅ Full offline mode  
-- ✅ History log of previous calculations  
-- 🔜 AI explanation mode (“Explain how you solved it”)  
--    Improve WodiC UI/UX
--    Add support for multiple input types
--    Enhance error handling and validation
--    Expand documentation and examples
 
 ---
 
