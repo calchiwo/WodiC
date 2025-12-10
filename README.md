@@ -76,26 +76,6 @@ WodiC lets you talk to your calculator. You speak a problem, the app listens, co
 ```bash
 git clone https://github.com/calchiwo/WodiC.git
 
-
-You can also install WodiC as a p.**Progressive Web App (PWA)** directly from your browser by pressing the **Download Now** button locate
-
----7
-
-## 🧩 Tech Stack
-
-- **Frontend:** Next.js + React + TypeScript  
-- **Voice Recognition:** Web Speech API  
-- **Deployment:** Vercel  
-- **UI:** Tailwind CSS  
-- **Coded on:** My Phone only (don't have a laptop yet)
-- **Platform:** Fully responsive web app (works across browsers and devices)
-
----
-
-
-
----
-
 ## How to Run
 
 Follow these steps to run this Next.js project on your computer or phone.
