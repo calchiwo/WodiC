@@ -92,7 +92,7 @@ cd WodiC/myapp
 pnpm install
 ```
 
-If you use npm
+Or If you use npm
 
 ```bash
 npm install
