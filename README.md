@@ -120,7 +120,8 @@ http://localhost:3000
 
 ## Author
 
-**Caleb Wodi ([Calchiwo](https://x.com/calchiwo))**
+**Caleb Wodi
+X,@([Calchiwo](https://x.com/calchiwo))**
 
 ## License
 
