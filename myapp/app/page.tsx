@@ -23,7 +23,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold text-foreground text-balance">WodiC Voice Calculator</h1>
           </div>
           <p className="text-muted-foreground text-lg text-pretty">
-            Speak your math problems and get instant AI-powered tools
+            Speak your math problems and get instant AI-powered calculations.
           </p>
         </div>
         <VoiceCalculator />
