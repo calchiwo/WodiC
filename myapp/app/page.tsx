@@ -23,7 +23,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold text-foreground text-balance">WodiC Voice Calculator</h1>
           </div>
           <p className="text-muted-foreground text-lg text-pretty">
-            Speak your math problems and get instant AI-powered solutions
+            Speak your math problems and get instant AI-powered tools
           </p>
         </div>
         <VoiceCalculator />
@@ -34,7 +34,7 @@ export default function Home() {
           <p className="text-muted-foreground text-sm">
             This is a project of{" "}
             <a
-              href="https://builtbywodi.netlify.app"
+              href="https://calebwodi.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 font-semibold transition-colors"
