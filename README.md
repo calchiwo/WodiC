@@ -35,7 +35,7 @@ WodiC runs on Next.js using the App Router and ships as a Progressive Web App, w
 
 ## Tech Stack
 
-- Next.js App Router, React
+- Next.js, React
 - TypeScript compiled to JavaScript
 - Tailwind CSS, PostCSS
 - Web Speech API and Speech Synthesis API
