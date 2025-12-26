@@ -1,6 +1,8 @@
 # WodiC, The Voice Calculator
 
-WodiC is an AI voice scientific calculator. You speak your math problems, and it solves it instantly, even offline.
+WodiC is an AI voice scientific calculator I built entirely on my phone.
+
+I've always wanted a calculator that you can speak your math problems to, and it solves it instantly, even offline.
 
 Try it here: **https://wodic.vercel.app**
 
