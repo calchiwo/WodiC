@@ -30,9 +30,11 @@ WodiC lets you talk to your calculator. You speak a problem, the app listens, co
 
 ## Tech Stack
 
-- Next.js, React, TypeScript  
-- Web Speech API  
-- Tailwind CSS  
+- Next.js, React
+- Typescript
+- Tailwind CSS, PostCSS 
+- Web Speech API
+- pnpm 
 - Vercel deployment  
 
 ---
