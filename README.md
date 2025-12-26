@@ -122,7 +122,8 @@ http://localhost:3000
 
 **Caleb Wodi**
 
-**X,@[calchiwo](https://x.com/calchiwo)**
+**X: @[calchiwo](https://x.com/calchiwo)**
+**LinkedIn: @[calchiwo](https://linkedIn.com/in/calchiwo)**
 
 ## License
 
