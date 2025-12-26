@@ -4,17 +4,13 @@ WodiC is an AI voice scientific calculator i built entirely on my phone.
 
 I've always wanted a calculator that you can speak your math problems to, and it solves it instantly, even offline.
 
-That's one of the reasons that led me to built WodiC Voice Calculator
-
 try it here: **https://wodic.vercel.app**
 
 ---
 
 ## Overview
 
-WodiC is a voice driven scientific calculator that runs entirely in the browser.
-
-The app captures spoken math input using the Web Speech API, converts speech to text in real time, then parses the text into a structured mathematical expression. That expression flows through a deterministic evaluation layer that handles arithmetic, scientific functions, and constants without relying on a backend service.
+WodiC Voice Calculator app captures spoken math input using the Web Speech API, converts speech to text in real time, then parses the text into a structured mathematical expression. That expression flows through a deterministic evaluation layer that handles arithmetic, scientific functions, and constants without relying on a backend service.
 
 Computation happens locally on the device. This design enables full offline support once the app is installed.
 
