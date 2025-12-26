@@ -83,7 +83,7 @@ git clone https://github.com/calchiwo/WodiC.git
 2. **Open the project folder**
 
 ```bash
-cd WodiC/myapp
+cd WodiC
 ```
 
 3. **Install dependencies**
