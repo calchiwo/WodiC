@@ -12,7 +12,17 @@ try it here: **https://wodic.vercel.app**
 
 ## Overview
 
-WodiC lets you talk to your calculator. You speak a problem, the app listens, computes the result, and replies in real time. It works on mobile and desktop. You can install You can also install WodiC as a **Progressive Web App (PWA)** directly from your browser by pressing the **Download Now** button located at the top right, for an app like experience on mobile or desktop.
+WodiC is a voice driven scientific calculator that runs entirely in the browser.
+
+The app captures spoken math input using the Web Speech API, converts speech to text in real time, then parses the text into a structured mathematical expression. That expression flows through a deterministic evaluation layer that handles arithmetic, scientific functions, and constants without relying on a backend service.
+
+Computation happens locally on the device. This design enables full offline support once the app is installed.
+
+After evaluation, WodiC renders the formatted equation and result instantly in the UI. The result is also converted back to speech using browser native speech synthesis, allowing hands free interaction from input to output.
+
+WodiC runs on Next.js with the App Router and ships as a Progressive Web App. Assets, logic, and UI cache locally through the service worker, enabling fast loads and offline usage on both mobile and desktop.
+
+The system prioritizes low latency, privacy, and reliability by keeping the entire voice to compute to response loop client side.
 
 ---
 
