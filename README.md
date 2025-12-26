@@ -10,7 +10,7 @@ try it here: **https://wodic.vercel.app**
 
 ## Overview
 
-WodiC voice calculator appp captures spoken math input using the Web Speech API, converts speech to text in real time, and parses the text into a structured mathematical expression processed by a local evaluation engine that handles arithmetic, scientific functions, and constants without relying on any backend service.
+WodiC voice calculator app captures spoken math input using the Web Speech API, converts speech to text in real time, and parses the text into a structured mathematical expression processed by a local evaluation engine that handles arithmetic, scientific functions, and constants without relying on any backend service.
 
 All computation happens locally on the device, which enables offline support once the app is installed and ensures low latency, privacy, and reliability throughout the entire interaction.
 
