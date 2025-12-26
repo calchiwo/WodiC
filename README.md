@@ -1,6 +1,6 @@
 # WodiC, The Voice Calculator
 
-WodiC is a fast voice based scientific calculator. You speak your math, it solves it instantly, even offline.
+WodiC is a fast AI voice scientific calculator. You speak your math, it solves it instantly, even offline.
 
 Try it here: **https://wodic.vercel.app**
 
