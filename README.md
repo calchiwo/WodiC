@@ -124,7 +124,7 @@ This project is **open source** under the [MIT License](LICENSE)
 
 ## Contributing
 
-Contributions are welcome! [Read the contribution guide here.](https://github.com/samueltuoyo15/Dokugen/blob/main/CONTRIBUTION.md)
+Contributions are welcome!
 
 ## Author
 
