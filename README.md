@@ -118,14 +118,16 @@ Visit this URL in your browser.
 http://localhost:3000
 ```
 
-## Author
-
-**Caleb Wodi**
-
-**X: @[calchiwo](https://x.com/calchiwo)**
-
-**LinkedIn: @[calchiwo](https://linkedIn.com/in/calchiwo)**
-
 ## License
 
-This project is **open source** under the [MIT License](LICENSE).
+This project is **open source** under the [MIT License](LICENSE)
+
+## Contributing
+
+Contributions are welcome! [Read the contribution guide here.](https://github.com/samueltuoyo15/Dokugen/blob/main/CONTRIBUTION.md)
+
+## Author
+
+- **Caleb Wodi**
+- [Twitter](https://x.com/calchiwo)
+- [LinkedIn](https://www.linkedin.com/in/calchiwo)
