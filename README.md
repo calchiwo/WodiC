@@ -10,15 +10,13 @@ try it here: **https://wodic.vercel.app**
 
 ## Overview
 
-WodiC Voice Calculator app captures spoken math input using the Web Speech API, converts speech to text in real time, then parses the text into a structured mathematical expression. That expression flows through a deterministic evaluation layer that handles arithmetic, scientific functions, and constants without relying on a backend service.
+WodiC is a voice driven scientific calculator that runs entirely in the browser and captures spoken math input using the Web Speech API, converts speech to text in real time, and parses the text into a structured mathematical expression that flows through a deterministic evaluation layer capable of handling arithmetic, scientific functions, and constants without relying on any backend service.
 
-Computation happens locally on the device. This design enables full offline support once the app is installed.
+All computation happens locally on the device, which enables full offline support once the app is installed and ensures low latency, privacy, and reliability throughout the entire interaction.
 
-After evaluation, WodiC renders the formatted equation and result instantly in the UI. The result is also converted back to speech using browser native speech synthesis, allowing hands free interaction from input to output.
+After evaluation, WodiC renders the formatted equation and result instantly in the interface and converts the result back to speech using native browser speech synthesis, allowing hands free interaction from input to output on both mobile and desktop.
 
-WodiC runs on Next.js with the App Router and ships as a Progressive Web App. Assets, logic, and UI cache locally through the service worker, enabling fast loads and offline usage on both mobile and desktop.
-
-The system prioritizes low latency, privacy, and reliability by keeping the entire voice to compute to response loop client side.
+WodiC runs on Next.js using the App Router and ships as a Progressive Web App, with assets, logic, and UI cached locally through a service worker to enable fast loading and consistent offline behavior.
 
 ---
 
