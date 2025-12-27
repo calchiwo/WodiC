@@ -1,9 +1,3 @@
-// This module provides optional improved parsing for voice input
-// It's completely modular and can be toggled independently
-
-/**
- * Structured math tokens returned from parsing natural language
- */
 export interface MathTokens {
   operator: "+" | "-" | "*" | "/" | "%" | "^" | null
   operands: number[]
@@ -11,14 +5,9 @@ export interface MathTokens {
   confidence: "high" | "medium" | "low"
 }
 
-/**
- * Cleans filler words and normalizes the input text
- * Removes common speech artifacts and repeated words
- */
-export function normalizeNaturalLanguage(input: string): string {
+function normalizeNaturalLanguage(input: string): string {
   let normalized = input.toLowerCase().trim()
 
-  // Remove common filler words and speech artifacts
   const fillerWords = [
     "the",
     "a",
@@ -43,23 +32,15 @@ export function normalizeNaturalLanguage(input: string): string {
     normalized = normalized.replace(regex, "")
   })
 
-  // Remove repeated words
   normalized = normalized.replace(/\b(\w+)(\s+\1)+\b/g, "$1")
-
-  // Clean up extra spaces
   normalized = normalized.replace(/\s+/g, " ").trim()
 
   return normalized
 }
 
-/**
- * Extracts operator and operands from cleaned natural language input
- * Returns structured tokens without executing the calculation
- */
 export function parseNaturalLanguageMath(input: string): MathTokens | null {
   const cleaned = normalizeNaturalLanguage(input)
 
-  // Define operator patterns with priority (tried in order)
   const operatorPatterns = [
     {
       regex: /plus|add|\+/gi,
@@ -93,7 +74,6 @@ export function parseNaturalLanguageMath(input: string): MathTokens | null {
     },
   ]
 
-  // Find which operator is in the input
   let detectedOperator: (typeof operatorPatterns)[number] | null = null
   for (const pattern of operatorPatterns) {
     if (pattern.regex.test(cleaned)) {
@@ -102,11 +82,9 @@ export function parseNaturalLanguageMath(input: string): MathTokens | null {
     }
   }
 
-  // Extract numbers from the input
   const numberMatches = cleaned.match(/-?\d+\.?\d*|\d*\.?\d+/g)
   const operands = numberMatches ? numberMatches.map(Number) : []
 
-  // If no operator or no operands, return null
   if (!detectedOperator || operands.length < 2) {
     return null
   }
@@ -119,43 +97,15 @@ export function parseNaturalLanguageMath(input: string): MathTokens | null {
   }
 }
 
-/**
- * Converts parsed math tokens back to a safe mathematical expression string
- * Does NOT execute the calculation - just returns the expression
- */
-export function tokensToExpression(tokens: MathTokens): string {
-  const operatorMap: Record<string, string> = {
-    "+": " + ",
-    "-": " - ",
-    "*": " * ",
-    "/": " / ",
-    "%": " % ",
-    "^": " ^ ",
-  }
-
-  if (!tokens.operator || tokens.operands.length < 2) {
-    return tokens.rawExpression
-  }
-
-  const operator = operatorMap[tokens.operator] || tokens.operator
-  return tokens.operands.join(operator)
-}
-
-/**
- * Validates if the parsed tokens are safe and reasonable
- */
 export function validateMathTokens(tokens: MathTokens): boolean {
-  // Check if operands are finite numbers
   if (!tokens.operands.every((num) => isFinite(num))) {
     return false
   }
 
-  // Check for unreasonably large numbers (overflow protection)
   if (tokens.operands.some((num) => Math.abs(num) > 1e15)) {
     return false
   }
 
-  // Division by zero check
   if (tokens.operator === "/" && tokens.operands.slice(1).some((num) => num === 0)) {
     return false
   }
@@ -163,9 +113,6 @@ export function validateMathTokens(tokens: MathTokens): boolean {
   return true
 }
 
-/**
- * Generate a human-readable explanation from parsed tokens
- */
 export function generateExplanation(tokens: MathTokens): string {
   const operatorWords: Record<string, string> = {
     "+": "plus",

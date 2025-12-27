@@ -33,7 +33,6 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}) {
 
       loadVoices()
 
-      // Some browsers load voices asynchronously
       if (synthRef.current.onvoiceschanged !== undefined) {
         synthRef.current.onvoiceschanged = loadVoices
       }
@@ -68,12 +67,10 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}) {
             }
 
             if (!selectedVoice) {
-              // Try to find a voice that matches the language
               selectedVoice = voices.find((v) => v.lang.startsWith(lang.split("-")[0]))
             }
 
             if (!selectedVoice) {
-              // Fallback to first available voice
               selectedVoice = voices[0]
             }
 
