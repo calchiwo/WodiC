@@ -13,9 +13,15 @@ interface UseSpeechRecognitionOptions {
   onEnd?: () => void
 }
 
+// Detect support synchronously so the value is correct on the very first render
+const detectSpeechSupport = () => {
+  if (typeof window === "undefined") return false
+  return !!(window.SpeechRecognition || window.webkitSpeechRecognition)
+}
+
 export function useSpeechRecognition(options: UseSpeechRecognitionOptions = {}) {
   const [isListening, setIsListening] = useState(false)
-  const [isSupported, setIsSupported] = useState(false)
+  const [isSupported] = useState(detectSpeechSupport)
   const [transcript, setTranscript] = useState("")
   const [error, setError] = useState<string | null>(null)
 
@@ -29,7 +35,6 @@ export function useSpeechRecognition(options: UseSpeechRecognitionOptions = {}) 
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 
       if (SpeechRecognition) {
-        setIsSupported(true)
         recognitionRef.current = new SpeechRecognition()
 
         const recognition = recognitionRef.current

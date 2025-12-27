@@ -10,9 +10,15 @@ interface UseTextToSpeechOptions {
   voice?: string
 }
 
+// Detect support synchronously so the value is correct on the very first render
+const detectTTSSupport = () => {
+  if (typeof window === "undefined") return false
+  return !!window.speechSynthesis
+}
+
 export function useTextToSpeech(options: UseTextToSpeechOptions = {}) {
   const [isSpeaking, setIsSpeaking] = useState(false)
-  const [isSupported, setIsSupported] = useState(false)
+  const [isSupported] = useState(detectTTSSupport)
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([])
   const [error, setError] = useState<string | null>(null)
 
@@ -23,7 +29,6 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}) {
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.speechSynthesis) {
-      setIsSupported(true)
       synthRef.current = window.speechSynthesis
 
       const loadVoices = () => {
