@@ -33,9 +33,7 @@ export function UnitConversionVoice({ onVoiceInput, isProcessing }: UnitConversi
         setTranscript("")
       }
     },
-    onError: (error) => {
-      console.error("[v0] Voice recognition error:", error)
-    },
+    onError: () => {},
   })
 
   const { isSpeaking } = useTextToSpeech({

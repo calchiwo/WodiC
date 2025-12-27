@@ -263,8 +263,7 @@ export function convertUnits(input: UnitConversionInput): UnitConversionResult |
       formula: `${input.value} × ${getConversionFactor(input.sourceUnit, input.targetUnit)} = ${roundedResult}`,
       explanation: `${input.value} ${sourceUnitFormatted} is approximately ${roundedResult} ${targetUnitFormatted}`,
     }
-  } catch (error) {
-    console.error("[v0] Unit conversion error:", error)
+  } catch {
     return null
   }
 }

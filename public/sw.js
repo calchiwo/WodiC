@@ -3,27 +3,12 @@ const urlsToCache = [
   "/",
   "/manifest.json",
   "/wodic-logo.jpg",
-  "/_next/static/css/app/layout.css",
-  "/_next/static/css/app/page.css",
-  "/_next/static/chunks/webpack.js",
-  "/_next/static/chunks/main.js",
-  "/_next/static/chunks/pages/_app.js",
-  "/_next/static/chunks/pages/_error.js",
-  "/placeholder.svg",
 ]
 
 // Install event - cache resources
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches
-      .open(CACHE_NAME)
-      .then((cache) => {
-        console.log("[SW] Caching app shell")
-        return cache.addAll(urlsToCache)
-      })
-      .catch((error) => {
-        console.log("[SW] Cache install failed:", error)
-      }),
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache)).catch(() => {}),
   )
   self.skipWaiting()
 })
