@@ -433,7 +433,9 @@ export default function VoiceCalculator() {
         try {
           const result = Function(`"use strict"; return (${cleaned})`)()
           if (typeof result === "number" && !isNaN(result) && isFinite(result)) {
-            return { value: result.toString(), explanation: `${cleaned} = ${result}` }
+            // Format the expression with spaces around operators for readable display
+            const displayExpr = cleaned.replace(/([+\-*/])/g, " $1 ").replace(/\s+/g, " ").trim()
+            return { value: result.toString(), explanation: `${displayExpr} = ${result}` }
           }
         } catch {
           // Fall through to return null
@@ -447,7 +449,9 @@ export default function VoiceCalculator() {
   }
 
   const extractNumbersFromText = (text: string): number[] => {
-    const matches = text.match(/-?\d+\.?\d*|\d*\.?\d+/g)
+    // Only treat `-` as a negative sign at the start of the string or after an operator/open-paren,
+    // not between two digits where it's a subtraction operator
+    const matches = text.match(/(?:^|(?<=[+\-*/^(%]))-?\d+\.?\d*|\d+\.?\d*/g)
     return matches ? matches.map(Number).filter((num) => !isNaN(num)) : []
   }
 
@@ -509,7 +513,20 @@ export default function VoiceCalculator() {
     } else if (value === "⌫") {
       setDisplay((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"))
     } else {
-      setDisplay((prev) => (prev === "0" ? value : prev + value))
+      const operators = ["+", "-", "/", "×", "*"]
+      const isOperator = operators.includes(value)
+      setDisplay((prev) => {
+        if (prev === "0" && !isOperator) return value
+        if (isOperator) {
+          // Don't allow operator as first character
+          if (prev === "0") return prev
+          // Replace consecutive operator instead of appending (prevents `--`, `+-`, etc.)
+          const trimmed = prev.replace(/\s*[+\-*/×]\s*$/, "")
+          return `${trimmed} ${value} `
+        }
+        // If previous character is a space (after operator), just append the digit
+        return prev + value
+      })
     }
   }
 

@@ -103,8 +103,10 @@ export function parseNaturalLanguageMath(input: string): MathTokens | null {
   }
 
   // Extract numbers from the input
-  const numberMatches = cleaned.match(/-?\d+\.?\d*|\d*\.?\d+/g)
-  const operands = numberMatches ? numberMatches.map(Number) : []
+  // Only treat `-` as a negative sign at the start of the string or after an operator/open-paren,
+  // not between two digits where it's a subtraction operator
+  const numberMatches = cleaned.match(/(?:^|(?<=[+\-*/^(%]))-?\d+\.?\d*|\d+\.?\d*/g)
+  const operands = numberMatches ? numberMatches.map(Number).filter((num) => !isNaN(num)) : []
 
   // If no operator or no operands, return null
   if (!detectedOperator || operands.length < 2) {
