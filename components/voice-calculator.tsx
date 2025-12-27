@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, lazy, Suspense } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -9,8 +9,9 @@ import { Mic, MicOff, Volume2, VolumeX, Calculator, Trash2, AlertCircle, Setting
 import { cn } from "@/lib/utils"
 import { useSpeechRecognition } from "@/hooks/use-speech-recognition"
 import { useTextToSpeech } from "@/hooks/use-text-to-speech"
-import AdvancedCalculatorFeatures from "@/components/advanced-calculator-features"
 import { parseNaturalLanguageMath, validateMathTokens, generateExplanation } from "@/utils/natural-language-parser"
+
+const AdvancedCalculatorFeatures = lazy(() => import("@/components/advanced-calculator-features"))
 
 interface CalculationHistory {
   id: string
@@ -630,7 +631,22 @@ export default function VoiceCalculator() {
         </Card>
 
         {/* Advanced Features */}
-        {showAdvanced && <AdvancedCalculatorFeatures onCalculate={processVoiceInput} isProcessing={isProcessing} />}
+        {showAdvanced && (
+          <Suspense
+            fallback={
+              <Card>
+                <CardContent className="p-6">
+                  <div className="animate-pulse space-y-3">
+                    <div className="h-8 rounded bg-muted w-1/3" />
+                    <div className="h-32 rounded bg-muted" />
+                  </div>
+                </CardContent>
+              </Card>
+            }
+          >
+            <AdvancedCalculatorFeatures onCalculate={processVoiceInput} isProcessing={isProcessing} />
+          </Suspense>
+        )}
 
         {/* Basic Calculator */}
         <Card>
