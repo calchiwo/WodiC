@@ -1,12 +1,19 @@
 # WodiC, The Voice Calculator
 
-WodiC is an AI voice scientific calculator I built entirely on my phone.
+![WodiC Voice Calculator](/public/wodic-logo.jpg)
 
-I've always wanted a calculator that you can speak your math problems to, and it solves them instantly, even offline.
+**WodiC** is an AI voice scientific calculator I built entirely on my phone using mobile IDEs like Termux and Acode.
 
-Try it here: **https://wodic.vercel.app**
+I've always wanted a calculator that I can speak my math problems to, and it solves them instantly, even offline.
 
----
+That led me to write the initial version of WodiC voice calculator in Java and XML using AIDE in July 2025 I shared it with a few of my friends, I got a few feedbacks from them and that shaped the foundation of what would become WodiC the voice calculator
+
+<p float="left">
+  <img src="public/wodic-screenshot-1.jpg" width="200" />
+  <img src="public/wodic-screenshot-2.jpg" width="200" /> 
+  <img src="public/wodic-screenshot-3.jpg" width="200" />
+  <img src="public/wodic-screenshot-4.jpg" width="200" />
+</p>
 
 ## Overview
 
@@ -18,22 +25,18 @@ After evaluation, WodiC renders the formatted equation and result instantly in t
 
 WodiC runs on Next.js using the App Router and ships as a Progressive Web App, with assets, logic, and UI cached locally through a service worker to enable fast loading and consistent offline behavior.
 
----
-
 ## Features
 
-- Voice input  
-- Instant results  
-- Scientific mode  
-- Dark mode  
-- Natural voice replies  
-- Lightweight performance  
-- Works offline  
-- Installable as a PWA  
+- Voice input
+- Instant results
+- Scientific mode
+- Dark mode
+- Natural voice replies
+- Lightweight performance
+- Works offline
+- Installable as a PWA
 
----
-
-## Tech Stack
+## Tech stack I used
 
 - Next.js, React
 - TypeScript compiled to JavaScript
@@ -43,17 +46,13 @@ WodiC runs on Next.js using the App Router and ships as a Progressive Web App, w
 - pnpm
 - Vercel deployment
 
----
-
 ## Usage
 
-1. Visit https://wodic.vercel.app  
-2. Allow microphone access  
-3. Speak a command  
-4. WodiC displays the equation and speaks the result  
+1. Visit [https://wodic.vercel.app](https://wodic.vercel.app)
+2. Allow microphone access
+3. Speak a command
+4. WodiC displays the equation and speaks the result
 5. Tap the install option in your browser to add the PWA
-
----
 
 ## Example Commands
 
@@ -64,26 +63,26 @@ WodiC runs on Next.js using the App Router and ships as a Progressive Web App, w
 | Cosine of thirty degrees | The answer is zero point eight six six |
 | Ten factorial | The answer is three million six hundred twenty eight thousand eight hundred |
 
----
-
 ## Roadmap
 
-- Voice input with instant results, complete  
-- Scientific mode, complete  
-- Full offline support, complete  
-- PWA installation, complete  
-- History log, complete  
-- AI explanation mode  
-- Improved UI and UX  
-- Better error handling  
-- More input formats  
-- Expanded documentation  
-
----
+- Voice input with instant results, complete
+- Scientific mode, complete
+- Full offline support, complete
+- PWA installation, complete
+- History log, complete
+- AI explanation mode
+- Improved UI and UX
+- Better error handling
+- Scientific tools
+- Graph plotting
+- Matrix solving
+- Factorial
+- More input formats
+- Expanded documentation
 
 ## How to Run
 
-Follow these steps to run this Next.js project on your computer or phone.
+Follow these steps to run this Next.js project on your phone or computer.
 
 1. **Clone the repository**
 
@@ -100,22 +99,10 @@ cd WodiC
 3. **Install dependencies**
 
 ```bash
-pnpm install
-```
-
-Or If you use npm
-
-```bash
 npm install
 ```
 
 4. **Run the development server**
-
-```bash
-pnpm dev
-```
-
-Or with npm
 
 ```bash
 npm run dev
