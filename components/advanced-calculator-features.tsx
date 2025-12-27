@@ -42,7 +42,6 @@ export default function AdvancedCalculatorFeatures({ onCalculate, isProcessing }
         setFromUnit(parsed.sourceUnit)
         setToUnit(parsed.targetUnit)
         setConversionResult(result)
-        // Call parent to process and speak the result
         onCalculate(`Convert ${parsed.value} ${parsed.sourceUnit} to ${parsed.targetUnit}`)
       }
     }
@@ -129,7 +128,6 @@ export default function AdvancedCalculatorFeatures({ onCalculate, isProcessing }
             <UnitConversionVoice onVoiceInput={handleVoiceUnitConversion} isProcessing={isProcessing} />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Temperature Conversion */}
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Thermometer className="h-4 w-4" />
@@ -171,7 +169,6 @@ export default function AdvancedCalculatorFeatures({ onCalculate, isProcessing }
                 </div>
               </div>
 
-              {/* Length Conversion */}
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Ruler className="h-4 w-4" />
