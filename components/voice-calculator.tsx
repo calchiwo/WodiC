@@ -29,7 +29,6 @@ export default function VoiceCalculator() {
   const [showAdvanced, setShowAdvanced] = useState(false)
   const [useEnhancedParsing] = useState(true)
 
-  // Speech recognition hook
   const {
     isListening,
     isSupported: speechSupported,
@@ -46,11 +45,8 @@ export default function VoiceCalculator() {
         processVoiceInput(transcript.trim())
       }
     },
-    onError: (error) => {
-      console.error("Speech recognition error:", error)
-    },
+    onError: () => {},
     onEnd: () => {
-      // Clear transcript after a delay if no final result
       setTimeout(() => {
         if (!isProcessing) {
           setCurrentTranscript("")
@@ -59,7 +55,6 @@ export default function VoiceCalculator() {
     },
   })
 
-  // Text-to-speech hook with enhanced settings
   const {
     speak,
     stop: stopSpeaking,
@@ -80,12 +75,8 @@ export default function VoiceCalculator() {
       setProcessingError(null)
 
       try {
-        console.log("[v0] Processing manual calculation:", expression)
-
-        // First try local calculation for offline support
         const localResult = processLocalCalculationFallback(expression)
         if (localResult) {
-          console.log("[v0] Using local calculation result:", localResult)
           setDisplay(localResult.value)
 
           const newCalculation: CalculationHistory = {
@@ -102,7 +93,6 @@ export default function VoiceCalculator() {
           return
         }
 
-        // Fallback to API if local calculation fails
         const response = await fetch("/api/calculate", {
           method: "POST",
           headers: {
@@ -116,8 +106,6 @@ export default function VoiceCalculator() {
         }
 
         const data = await response.json()
-        console.log("[v0] API calculation result:", data)
-
         setDisplay(data.result)
 
         const newCalculation: CalculationHistory = {
@@ -131,13 +119,9 @@ export default function VoiceCalculator() {
 
         const speechText = formatSpeechOutput(data.result, data.explanation)
         speak(speechText)
-      } catch (error) {
-        console.error("[v0] Error processing calculation:", error)
-
-        // Enhanced offline fallback
+      } catch {
         const offlineResult = processLocalCalculationFallback(expression)
         if (offlineResult) {
-          console.log("[v0] Using offline fallback:", offlineResult)
           setDisplay(offlineResult.value)
           speak(offlineResult.explanation)
         } else {
@@ -157,12 +141,8 @@ export default function VoiceCalculator() {
       setProcessingError(null)
 
       try {
-        console.log("[v0] Processing voice input:", input)
-
-        // Try local calculation first for offline support
         const localResult = processLocalCalculationFallback(input)
         if (localResult) {
-          console.log("[v0] Using local voice calculation:", localResult)
           setDisplay(localResult.value)
 
           const newCalculation: CalculationHistory = {
@@ -192,8 +172,6 @@ export default function VoiceCalculator() {
         }
 
         const data = await response.json()
-        console.log("[v0] Voice API result:", data)
-
         setDisplay(data.result)
 
         const newCalculation: CalculationHistory = {
@@ -207,13 +185,9 @@ export default function VoiceCalculator() {
 
         const speechText = formatSpeechOutput(data.result, data.explanation)
         speak(speechText)
-      } catch (error) {
-        console.error("[v0] Error processing voice calculation:", error)
-
-        // Enhanced offline fallback for voice
+      } catch {
         const offlineResult = processLocalCalculationFallback(input)
         if (offlineResult) {
-          console.log("[v0] Using voice offline fallback:", offlineResult)
           setDisplay(offlineResult.value)
           speak(offlineResult.explanation)
         } else {
@@ -236,7 +210,6 @@ export default function VoiceCalculator() {
         const parsedTokens = parseNaturalLanguageMath(input)
         if (parsedTokens && validateMathTokens(parsedTokens)) {
           const explanation = generateExplanation(parsedTokens)
-          // Extract for calculation without executing yet
           if (parsedTokens.operator === "+") {
             const result = parsedTokens.operands.reduce((sum, num) => sum + num, 0)
             return { value: result.toString(), explanation: `${explanation} = ${result}` }
@@ -253,7 +226,6 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Handle trigonometric functions with proper degree conversion
       if (normalizedInput.includes("sin")) {
         const match = normalizedInput.match(/sin\s*(\d+\.?\d*)/)
         if (match) {
@@ -287,7 +259,6 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Handle logarithmic functions
       if (normalizedInput.includes("log")) {
         const match = normalizedInput.match(/log\s*(\d+\.?\d*)/)
         if (match) {
@@ -300,7 +271,6 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Handle natural logarithm
       if (normalizedInput.includes("ln")) {
         const match = normalizedInput.match(/ln\s*(\d+\.?\d*)/)
         if (match) {
@@ -313,7 +283,6 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Handle square root
       if (normalizedInput.includes("√") || normalizedInput.includes("sqrt")) {
         const match = normalizedInput.match(/(?:√|sqrt)\s*(\d+\.?\d*)/)
         if (match) {
@@ -326,7 +295,6 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Handle squared (x²)
       if (normalizedInput.includes("²") || normalizedInput.includes("squared")) {
         const match = normalizedInput.match(/(\d+\.?\d*)(?:²|squared)/)
         if (match) {
@@ -336,7 +304,6 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Handle cubed (x³)
       if (normalizedInput.includes("³") || normalizedInput.includes("cubed")) {
         const match = normalizedInput.match(/(\d+\.?\d*)(?:³|cubed)/)
         if (match) {
@@ -346,7 +313,6 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Handle power (x^y or x to the power y)
       if (normalizedInput.includes("^") || normalizedInput.includes("to the power")) {
         const match = normalizedInput.match(/(\d+\.?\d*)\s*(?:\^|to the power)\s*(\d+\.?\d*)/)
         if (match) {
@@ -357,7 +323,6 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Handle factorial
       if (normalizedInput.includes("!") || normalizedInput.includes("factorial")) {
         const match = normalizedInput.match(/(\d+)(?:!|factorial)/)
         if (match) {
@@ -376,17 +341,14 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Handle pi
       if (normalizedInput.includes("π") || (normalizedInput.includes("pi") && !normalizedInput.includes("pi"))) {
         return { value: Math.PI.toFixed(6), explanation: `π = ${Math.PI.toFixed(6)}` }
       }
 
-      // Handle Euler's number
       if (normalizedInput.includes(" e ") || normalizedInput.includes("euler")) {
         return { value: Math.E.toFixed(6), explanation: `e = ${Math.E.toFixed(6)}` }
       }
 
-      // Handle "what is" questions
       let expression = normalizedInput
       if (normalizedInput.startsWith("what is") || normalizedInput.startsWith("calculate")) {
         expression = normalizedInput.replace(/^(what is|calculate)\s+/, "")
@@ -394,7 +356,6 @@ export default function VoiceCalculator() {
 
       expression = expression.replace(/×/g, "*")
 
-      // Basic arithmetic with word parsing
       if (expression.includes("plus") || expression.includes("add")) {
         const numbers = extractNumbersFromText(expression)
         if (numbers.length >= 2) {
@@ -427,7 +388,6 @@ export default function VoiceCalculator() {
         }
       }
 
-      // Try direct mathematical expression evaluation
       const cleaned = expression.replace(/[^0-9+\-*/.() ]/g, "").replace(/\s+/g, "")
       if (cleaned && /\d/.test(cleaned)) {
         try {
@@ -435,9 +395,7 @@ export default function VoiceCalculator() {
           if (typeof result === "number" && !isNaN(result) && isFinite(result)) {
             return { value: result.toString(), explanation: `${cleaned} = ${result}` }
           }
-        } catch {
-          // Fall through to return null
-        }
+        } catch {}
       }
 
       return null
@@ -497,7 +455,7 @@ export default function VoiceCalculator() {
   }
 
   const handleButtonClick = (value: string) => {
-    setProcessingError(null) // Clear errors when user interacts
+    setProcessingError(null)
 
     if (value === "C") {
       setDisplay("0")
@@ -534,7 +492,6 @@ export default function VoiceCalculator() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      {/* Main Calculator */}
       <div className="lg:col-span-2 space-y-4">
         {speechError && (
           <Alert variant="destructive">
@@ -543,7 +500,6 @@ export default function VoiceCalculator() {
           </Alert>
         )}
 
-        {/* Display */}
         <Card>
           <CardContent className="p-6">
             <div className="text-right">
@@ -556,7 +512,6 @@ export default function VoiceCalculator() {
           </CardContent>
         </Card>
 
-        {/* Voice Controls */}
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center justify-center gap-4">
@@ -612,10 +567,8 @@ export default function VoiceCalculator() {
           </CardContent>
         </Card>
 
-        {/* Advanced Features */}
         {showAdvanced && <AdvancedCalculatorFeatures onCalculate={processVoiceInput} isProcessing={isProcessing} />}
 
-        {/* Basic Calculator */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -658,7 +611,6 @@ export default function VoiceCalculator() {
           </CardContent>
         </Card>
 
-        {/* Scientific Functions */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -684,7 +636,6 @@ export default function VoiceCalculator() {
         </Card>
       </div>
 
-      {/* History Sidebar */}
       <div className="space-y-4">
         <Card>
           <CardHeader>
@@ -730,7 +681,6 @@ export default function VoiceCalculator() {
           </CardContent>
         </Card>
 
-        {/* Voice Commands Help */}
         <Card>
           <CardHeader>
             <CardTitle>Voice Commands</CardTitle>
@@ -758,7 +708,6 @@ export default function VoiceCalculator() {
           </CardContent>
         </Card>
 
-        {/* System Status */}
         <Card>
           <CardHeader>
             <CardTitle>System Status</CardTitle>

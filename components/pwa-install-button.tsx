@@ -15,7 +15,6 @@ export default function PWAInstallButton() {
   const [isInstalled, setIsInstalled] = useState(false)
 
   useEffect(() => {
-    // Check if app is already installed
     const checkIfInstalled = () => {
       if (window.matchMedia("(display-mode: standalone)").matches) {
         setIsInstalled(true)
@@ -30,7 +29,6 @@ export default function PWAInstallButton() {
 
     checkIfInstalled()
 
-    // Listen for beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault()
       const promptEvent = e as BeforeInstallPromptEvent
@@ -38,7 +36,6 @@ export default function PWAInstallButton() {
       setIsInstallable(true)
     }
 
-    // Listen for app installed event
     const handleAppInstalled = () => {
       setIsInstalled(true)
       setIsInstallable(false)
@@ -59,22 +56,12 @@ export default function PWAInstallButton() {
 
     try {
       await deferredPrompt.prompt()
-      const { outcome } = await deferredPrompt.userChoice
-
-      if (outcome === "accepted") {
-        console.log("PWA install accepted")
-      } else {
-        console.log("PWA install dismissed")
-      }
-
+      await deferredPrompt.userChoice
       setDeferredPrompt(null)
       setIsInstallable(false)
-    } catch (error) {
-      console.error("PWA install error:", error)
-    }
+    } catch {}
   }
 
-  // Don't show button if app is installed or not installable
   if (isInstalled || !isInstallable) {
     return null
   }
