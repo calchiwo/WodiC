@@ -44,7 +44,6 @@ export function useSpeechRecognition(options: UseSpeechRecognitionOptions = {}) 
           setTranscript("")
           onStart?.()
 
-          // Set a timeout to automatically stop listening after 30 seconds
           timeoutRef.current = setTimeout(() => {
             stop()
           }, 30000)

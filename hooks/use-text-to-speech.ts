@@ -33,7 +33,6 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}) {
 
       loadVoices()
 
-      // Some browsers load voices asynchronously
       if (synthRef.current.onvoiceschanged !== undefined) {
         synthRef.current.onvoiceschanged = loadVoices
       }
@@ -43,7 +42,6 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}) {
   const speak = useCallback(
     (text: string) => {
       if (!synthRef.current || !isSupported || !text.trim()) {
-        console.log("[v0] Speech synthesis not available or empty text")
         return
       }
 
@@ -69,12 +67,10 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}) {
             }
 
             if (!selectedVoice) {
-              // Try to find a voice that matches the language
               selectedVoice = voices.find((v) => v.lang.startsWith(lang.split("-")[0]))
             }
 
             if (!selectedVoice) {
-              // Fallback to first available voice
               selectedVoice = voices[0]
             }
 
@@ -92,18 +88,16 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}) {
             setIsSpeaking(false)
           }
 
-          utterance.onerror = (event) => {
-            console.log("[v0] Speech synthesis error:", event.error)
+          utterance.onerror = () => {
             setIsSpeaking(false)
-            setError(null) // Don't show error to user
+            setError(null)
           }
 
           synthRef.current.speak(utterance)
         }, 100)
-      } catch (error) {
-        console.log("[v0] Failed to start speech synthesis:", error)
+      } catch {
         setIsSpeaking(false)
-        setError(null) // Don't show error to user
+        setError(null)
       }
     },
     [isSupported, rate, pitch, volume, lang, voice, voices],
